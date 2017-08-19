@@ -1,0 +1,18 @@
+[local]
+localhost ansible_connection=local ansible_python_interpreter="/usr/bin/python3"
+
+[ubuntu]
+192.168.33.112 ansible_python_interpreter="/usr/bin/python3"
+
+[centos]
+192.168.33.113 ansible_python_interpreter="/usr/bin/python"
+
+[sab:children]
+local
+ubuntu
+centos
+
+
+[sab:vars]
+#ansible_python_interpreter="/usr/bin/python3.5"
+host_key_checking=False
